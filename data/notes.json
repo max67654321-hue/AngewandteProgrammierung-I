@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "string",
+    "content": "string",
+    "category": "string",
+    "created_at": "2026-04-30T06:17:06.700746+00:00"
+  },
+  {
+    "id": 2,
+    "title": "teste",
+    "content": "Hausaufgabe",
+    "category": "student",
+    "created_at": "2026-04-30T06:21:31.186971+00:00"
+  }
+]
