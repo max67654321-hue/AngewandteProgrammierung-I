@@ -55,87 +55,110 @@ _Explain how you overcame the challenges or what help you needed._
 ### Day 1
 
 #### 1. ✅ What did I accomplish?
-
-
-
-
-
+```
+- entwicklungsumgebung eingerichtet
+- Git installiert und getestet
+- VS Code installiert und Python extension eingerichtet
+- uv installiert und version geprüft
+- erstes FastAPI projekt erstellt
+- main.py erstellt
+- erste endpoints zusammen im kurs gemacht
+- root endpoint gemacht
+- status endpoint gemacht
+- about endpoint gemacht
+- API mit uv run fastapi dev gestartet
+- endpoints in /docs getestet
+- square endpoint gemacht
+- student endpoint gemacht
+- double endpoint gemacht
+```
 
 ---
 
 #### 2. 🚧 What challenges did I face?
-
-
-
-
-
+```
+- am anfang viele neue programme installiert
+- terminal befehle waren noch ungewohnt
+- verstehen was eine API ist war neu
+- FastAPI syntax war neu
+- verstehen wie @app.get funktioniert
+- hausaufgabe musste ich alleine machen
+- bei der hausaufgabe auf richtige pfade und funktionen achten
+```
 
 ---
 
 #### 3. 💡 How did I overcome them?
-
-
-
-
-
+```
+- setup schritt für schritt zusammen im kurs gemacht
+- endpoints zusammen im kurs ausprobiert
+- /docs benutzt um die API zu testen
+- fehlermeldungen im terminal angeschaut
+- beispiele aus dem kurs für die hausaufgabe benutzt
+- hausaufgabe alleine fertig gemacht
+```
 
 ---
 
 ### Day 2
 
 #### 1. ✅ What did I accomplish?
-
-
-
-
-
+```
+- python basics wiederholt
+- HTTP und JSON besprochen
+- GET und POST unterschied gelernt
+- Note Taking API angefangen
+- notes endpoints gemacht
+- daten in notes.json gespeichert
+- endpoints in /docs getestet
+- hausaufgabe mit category, filter und stats gemacht
+```
 
 ---
 
 #### 2. 🚧 What challenges did I face?
-
-
-
-
-
+```
+- viele neue sachen auf einmal
+- GET und POST war am anfang ungewohnt
+- Pydantic models waren neu
+- load_notes und save_notes waren erstmal verwirrend
+- category überall richtig einfügen
+```
 
 ---
 
 #### 3. 💡 How did I overcome them?
-
-
-
-
-
+```
+- beispiele aus dem kurs benutzt
+- code schritt für schritt geschrieben
+- endpoints in /docs getestet
+- notes.json angeschaut
+- hausaufgabe mit vorlage gemacht
+```
 
 ---
 
 ### Day 3
 
 #### 1. ✅ What did I accomplish?
-
-
-
-
-
-
----
+- alles in plural bei benennung
+- parameter sind optional
+- jede uuid ist anders
+- SQLModel mit python gemacht
 
 #### 2. 🚧 What challenges did I face?
-
-
-
-
-
+- neue imports gebraucht
+- neue code stückchen gebraucht
+- code wurde länger und unübersichtlicher
 
 ---
 
 #### 3. 💡 How did I overcome them?
-
-
-
-
-
+- schritt für schritt gemacht
+- imports ergänzt
+- code mit altem code verglichen
+- doppelte endpoints vermieden
+- besser verstanden wie FastAPI, SQLModel und SQLite zusammenarbeiten
 
 ---
 
@@ -144,29 +167,36 @@ _Explain how you overcame the challenges or what help you needed._
 ### Day 4
 
 #### 1. ✅ What did I accomplish?
-
-
-
-
-
+- pytest tests geschrieben
+- requests benutzt um endpoints zu testen
+- Faker benutzt für zufällige namen
+- root endpoint getestet
+- 404 error getestet
+- greetings endpoint getestet
+- is-adult endpoint getestet
+- mehrere edge cases getestet
+- tests mit uv run pytest ausgeführt
+- gesehen ob tests passed oder failed sind
 
 ---
 
 #### 2. 🚧 What challenges did I face?
-
-
-
-
-
+- challenges größtenteils zusammen in der gruppe gemacht
+- neue test datei gebraucht
+- pytest syntax war erstmal ungewohnt
+- edge cases waren teilweise schwer zu überlegen
+- negative zahlen und falsche eingaben mussten extra getestet werden
 
 ---
 
 #### 3. 💡 How did I overcome them?
-
-
-
-
-
+- tests schritt für schritt geschrieben
+- terminal ausgabe angeschaut
+- failed tests verbessert
+- mit verschiedenen zahlen getestet
+- Faker für mehrere namen benutzt
+- mehr edge cases hinzugefügt
+- am ende mehrere tests erfolgreich durchlaufen lassen
 
 ---
 
