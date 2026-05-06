@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Annotated, Optional
 
 from fastapi import Depends, FastAPI, HTTPException
-from pydantic import BaseModel, ConfigDict, Field as PydanticField
+from pydantic import BaseModel, ConfigDict, Field as PydanticField, field_validator
 from sqlmodel import Field, Relationship, SQLModel, Session, create_engine, select
 
 
@@ -88,11 +88,40 @@ class Tag(SQLModel, table=True):
     )
 
 
+def normalize_tag_names(tag_names: Optional[list[str]]) -> Optional[list[str]]:
+    if tag_names is None:
+        return None
+
+    normalized_tags = []
+    seen = set()
+
+    for tag_name in tag_names:
+        clean_name = tag_name.lower().strip()
+        if len(clean_name) < 2:
+            raise ValueError("Tags must be at least 2 characters long")
+
+        if clean_name in seen:
+            continue
+
+        seen.add(clean_name)
+        normalized_tags.append(clean_name)
+
+    if len(normalized_tags) > 10:
+        raise ValueError("A note can have at most 10 tags")
+
+    return normalized_tags
+
+
 class NoteCreate(BaseModel):
     title: str
     content: str
     category: str
     tags: list[str] = PydanticField(default_factory=list)
+
+    @field_validator("tags")
+    @classmethod
+    def validate_tags(cls, value: list[str]) -> list[str]:
+        return normalize_tag_names(value)
 
 
 class NoteUpdate(BaseModel):
@@ -100,6 +129,11 @@ class NoteUpdate(BaseModel):
     content: Optional[str] = None
     category: Optional[str] = None
     tags: Optional[list[str]] = None
+
+    @field_validator("tags")
+    @classmethod
+    def validate_tags(cls, value: Optional[list[str]]) -> Optional[list[str]]:
+        return normalize_tag_names(value)
 
 
 class NoteResponse(BaseModel):
@@ -124,6 +158,13 @@ def get_session():
 
 
 SessionDep = Annotated[Session, Depends(get_session)]
+
+
+def comparable_datetime(value: datetime) -> datetime:
+    if value.tzinfo is None:
+        return value
+
+    return value.astimezone(timezone.utc).replace(tzinfo=None)
 
 
 def note_to_response(note: Note) -> NoteResponse:
@@ -220,8 +261,8 @@ def list_notes(
     category: Optional[str] = None,
     search: Optional[str] = None,
     tag: Optional[str] = None,
-    created_after: Optional[str] = None,
-    created_before: Optional[str] = None,
+    created_after: Optional[datetime] = None,
+    created_before: Optional[datetime] = None,
 ) -> list[NoteResponse]:
     notes = session.exec(select(Note)).all()
 
@@ -244,15 +285,17 @@ def list_notes(
         ]
 
     if created_after:
+        created_after = comparable_datetime(created_after)
         notes = [
             note for note in notes
-            if note.created_at.isoformat() >= created_after
+            if comparable_datetime(note.created_at) >= created_after
         ]
 
     if created_before:
+        created_before = comparable_datetime(created_before)
         notes = [
             note for note in notes
-            if note.created_at.isoformat() <= created_before
+            if comparable_datetime(note.created_at) <= created_before
         ]
 
     return [note_to_response(note) for note in notes]
@@ -310,8 +353,12 @@ def get_notes_by_category(
 
 @app.get("/tags")
 def list_tags(session: SessionDep) -> list[str]:
-    tags = session.exec(select(Tag)).all()
-    return sorted(tag.name for tag in tags)
+    notes = session.exec(select(Note)).all()
+    return sorted({
+        tag.name
+        for note in notes
+        for tag in note.tags
+    })
 
 
 @app.get("/tags/{tag_name}/notes")
