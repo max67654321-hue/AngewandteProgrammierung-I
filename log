@@ -232,29 +232,40 @@ _Explain how you overcame the challenges or what help you needed._
 ### Day 6
 
 #### 1. ✅ What did I accomplish?
-
-
-
-
-
+- decorators in Python besprochen
+- verstanden, dass decorators Funktionen erweitern können
+- gesehen, dass FastAPI mit decorators wie @app.get arbeitet
+- eigene decorator Datei bzw. Beispiel vorbereitet
+- icecream als Hilfstool kennengelernt
+- an der Test-Suite gearbeitet
+- test_main.py aus der Referenz bzw. vom Kurs benutzt
+- Tests mit pytest ausgeführt
+- Fehler in main.py gesucht und behoben
+- Validation bei Tags und Datumsfiltern verbessert
+- Ziel war, dass die komplette Test-Suite durchläuft
 
 ---
 
 #### 2. 🚧 What challenges did I face?
-
-
-
-
-
+- decorators waren am Anfang schwer zu verstehen
+- der Unterschied zwischen normaler Funktion und decorator war neu
+- die große Test-Suite hatte viele Tests und war unübersichtlich
+- manche Tests sind fehlgeschlagen
+- Fehlermeldungen bei pytest mussten genau gelesen werden
+- Validation bei falschen Daten und zu vielen Tags war nicht direkt richtig
+- es war schwierig zu erkennen, ob der Fehler im Test oder in main.py liegt
 
 ---
 
 #### 3. 💡 How did I overcome them?
-
-
-
-
-
+- decorator Beispiele Schritt für Schritt angeschaut
+- @app.get als bekanntes Beispiel für decorators benutzt
+- pytest Ausgabe gelesen und die fehlgeschlagenen Tests einzeln geprüft
+- main.py angepasst, bis die erwarteten Statuscodes zurückgegeben wurden
+- Tags bereinigt, kleingeschrieben und Duplikate entfernt
+- Datumsparameter richtig validiert
+- Tests erneut ausgeführt und kontrolliert, ob sie bestehen
+- am Ende besser verstanden, wie Tests helfen Fehler im Code zu finden
 
 ---
 
