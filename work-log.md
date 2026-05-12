@@ -166,8 +166,7 @@ _Explain how you overcame the challenges or what help you needed._
 
 ### Day 4
 
-#### 1. ✅ What did I accomplish?
-- pytest tests geschrieben
+#### 1. ✅ What did I accomplish
 - requests benutzt um endpoints zu testen
 - Faker benutzt für zufällige namen
 - root endpoint getestet
@@ -203,70 +202,65 @@ _Explain how you overcame the challenges or what help you needed._
 ### Day 5
 
 #### 1. ✅ What did I accomplish?
-
-
-
-
-
-
+- Pydantic Data Validation genauer kennengelernt
+- verstanden, warum man Eingaben nicht einfach vertrauen sollte
+- Mindestlängen, Maximallängen und Regex-Patterns ausprobiert
+- HTTP 422 Fehler besser verstanden
+- Eingaben wie title, category und tags validiert
+- Tags bereinigt, kleingeschrieben und Duplikate entfernt
 ---
 
 #### 2. 🚧 What challenges did I face?
-
-
-
-
-
+- Pydantic Validatoren waren am Anfang schwer zu verstehen
+- HTTP 422 Fehlermeldungen musste ich erst richtig lesen lernen
+- `extra="forbid"` und `default_factory=list` waren neue Konzepte
+- beim Bereinigen von tags musste man auf leere Werte, Großbuchstaben und Duplikate achten
 
 ---
 
 #### 3. 💡 How did I overcome them?
-
-
-
-
-
+- Beispiele aus dem Kurs Schritt für Schritt übernommen
+- bewusst falsche Eingaben geschickt und die 422 Fehlermeldungen angeschaut
+- Tags mit verschiedenen Beispielen getestet
+- Code mit den bisherigen Notes Models verglichen
+- verstanden, dass Pydantic die Eingaben prüfen soll, bevor der Endpoint ausgeführt wird
+- durch die Übungen besser verstanden, wie man eine API sicherer und sauberer macht
 
 ---
 
 ### Day 6
 
 #### 1. ✅ What did I accomplish?
-- decorators in Python besprochen
-- verstanden, dass decorators Funktionen erweitern können
-- gesehen, dass FastAPI mit decorators wie @app.get arbeitet
-- eigene decorator Datei bzw. Beispiel vorbereitet
-- icecream als Hilfstool kennengelernt
-- an der Test-Suite gearbeitet
-- test_main.py aus der Referenz bzw. vom Kurs benutzt
-- Tests mit pytest ausgeführt
-- Fehler in main.py gesucht und behoben
-- Validation bei Tags und Datumsfiltern verbessert
-- Ziel war, dass die komplette Test-Suite durchläuft
+- Python Decorators kennengelernt
+- gesehen, dass FastAPI Decorators für Endpoints benutzt
+- eigene Datei `class_based_decorator.py` erstellt
+- mit `icecream` gearbeitet
+- `uv add icecream` benutzt
+- weiter an der Test-Suite gearbeitet
+- zusätzliche pytest-Datei heruntergeladen und ins Repository eingefügt
+- Tests mit `uv run pytest` ausgeführt
+- gesehen, welche Tests bestanden haben und welche noch fehlgeschlagen sind
 
 ---
 
 #### 2. 🚧 What challenges did I face?
-- decorators waren am Anfang schwer zu verstehen
-- der Unterschied zwischen normaler Funktion und decorator war neu
-- die große Test-Suite hatte viele Tests und war unübersichtlich
-- manche Tests sind fehlgeschlagen
-- Fehlermeldungen bei pytest mussten genau gelesen werden
-- Validation bei falschen Daten und zu vielen Tags war nicht direkt richtig
-- es war schwierig zu erkennen, ob der Fehler im Test oder in main.py liegt
+- Decorators waren am Anfang schwer zu verstehen
+- es war ungewohnt, dass eine Funktion eine andere Funktion verändern kann
+- Unterschied zwischen eigentlicher Programmlogik und Zusatzaufgaben war neu
+- manche Tests sind zuerst fehlgeschlagen
+- es war schwierig zu erkennen, welcher Endpoint oder welches Model angepasst werden musste
+- ältere Aufgaben wie Datenbank-Backend und Validation mussten noch mit den Tests zusammenpassen
 
 ---
 
 #### 3. 💡 How did I overcome them?
-- decorator Beispiele Schritt für Schritt angeschaut
-- @app.get als bekanntes Beispiel für decorators benutzt
-- pytest Ausgabe gelesen und die fehlgeschlagenen Tests einzeln geprüft
-- main.py angepasst, bis die erwarteten Statuscodes zurückgegeben wurden
-- Tags bereinigt, kleingeschrieben und Duplikate entfernt
-- Datumsparameter richtig validiert
-- Tests erneut ausgeführt und kontrolliert, ob sie bestehen
-- am Ende besser verstanden, wie Tests helfen Fehler im Code zu finden
-
+- Decorator-Beispiele Schritt für Schritt ausprobiert
+- `icecream` genutzt, um Ausgaben besser zu verstehen
+- Tests im Terminal ausgeführt und Fehlermeldungen gelesen
+- fehlgeschlagene Tests einzeln angeschaut
+- Code mit den bisherigen Aufgaben verglichen
+- verstanden, dass Tests helfen, Fehler in der API schneller zu finden
+- weiter daran gearbeitet, dass die komplette Test-Suite erfolgreich durchläuft
 ---
 
 ## Week 3
@@ -274,30 +268,33 @@ _Explain how you overcame the challenges or what help you needed._
 ### Day 7
 
 #### 1. ✅ What did I accomplish?
-
-
-
-
-
-
+- Streamlit kennengelernt
+- verstanden, dass Streamlit ein einfaches Frontend mit Python ermöglicht
+- Streamlit im Projekt benutzt
+- eine erste kleine Streamlit App getestet
+- Eingabefelder, Buttons und Ausgaben ausprobiert
+- mit `requests` eine externe API abgefragt
+- verstanden, dass FastAPI als Backend und Streamlit als Frontend zusammenarbeiten können
+- Aufgabe für `frontend.py` bekommen
 ---
 
 #### 2. 🚧 What challenges did I face?
-
-
-
-
-
+- Streamlit war neu für mich
+- Frontend und Backend gleichzeitig zu verstehen war ungewohnt
+- es war etwas verwirrend, zwei Terminals parallel zu nutzen
+- die API muss laufen, damit das Frontend Daten abrufen kann
+- Formular mit mehreren Eingaben musste richtig aufgebaut werden
 
 ---
 
 #### 3. 💡 How did I overcome them?
-
-
-
-
-
-
+- Beispiel aus der Präsentation Schritt für Schritt angeschaut
+- erst einfache Texte und Eingaben in Streamlit getestet
+- Button benutzt, um eine API-Anfrage auszulösen
+- mit `requests.get()` Daten von einer API geholt
+- verstanden, dass FastAPI und Streamlit parallel laufen müssen
+- Dokumentation und Kursbeispiele als Hilfe benutzt
+- `frontend.py` als Startpunkt für die Hausaufgabe vorbereitet
 ---
 
 ### Day 8
@@ -328,35 +325,5 @@ _Explain how you overcame the challenges or what help you needed._
 
 
 ---
-
-### Day 9
-
-#### 1. ✅ What did I accomplish?
-
-
-
-
-
-
----
-
-#### 2. 🚧 What challenges did I face?
-
-
-
-
-
-
----
-
-#### 3. 💡 How did I overcome them?
-
-
-
-
-
-
----
-
 
 # 🎉 Congratulations! You did it! 🎓✨
