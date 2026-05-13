@@ -300,30 +300,25 @@ _Explain how you overcame the challenges or what help you needed._
 ### Day 8
 
 #### 1. ✅ What did I accomplish?
-
-
-
-
-
-
+- Das Projekt strukturiert und aufgeräumt
+- Die Aufgaben einzelner Dateien besser verstanden
+- Prüfungsrelevante Dateien kontrolliert und sinnvoll benannt
+- Das README verbessert und übersichtlicher gestaltet
+- Alle Tests überprüft und erfolgreich ausgeführt
+- Code verbessert und erneut getestet
 ---
 
 #### 2. 🚧 What challenges did I face?
-
-
-
-
-
-
+- Oft war es schwierig nachzuvollziehen, warum bestimmte Schritte notwendig sind
+- Änderungen am Code waren nicht immer direkt verständlich
+- Mir haben an einigen Stellen technische Grundlagen gefehlt
 ---
 
 #### 3. 💡 How did I overcome them?
-
-
-
-
-
-
+- KI benutzt um nach Erklärungen zu fragen 
+- Ein besseres Verständnis für SQL-Datenbanken und deren Vorteile entwickelt
+- Fehler gemeinsam analysiert und nachvollzogen
+- Gezielt Fragen gestellt, wenn etwas unklar war
 ---
 
 # 🎉 Congratulations! You did it! 🎓✨
